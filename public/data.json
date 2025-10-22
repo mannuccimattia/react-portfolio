@@ -38,7 +38,8 @@
             },
             "github": {
                 "frontend": "https://github.com/mannuccimattia/mtg-card-price-checker",
-                "backend": null
+                "backend": null,
+                "source": null
             }
         },
         {
@@ -109,7 +110,56 @@
             },
             "github": {
                 "frontend": "https://github.com/mannuccimattia/vinyl-collector-frontend",
-                "backend": "https://github.com/mannuccimattia/vinyl-collector-backend"
+                "backend": "https://github.com/mannuccimattia/vinyl-collector-backend",
+                "source": null
+            }
+        },
+        {
+            "id": 2,
+            "title": "Boolze",
+            "description": "Progetto di gruppo. Simulazione di un e-commerce in React connesso a un database in MySQL con Node.js",
+            "technologies": [
+                "HTML & CSS",
+                "Javascript",
+                "Node.js",
+                "React",
+                "MySQL"
+            ],
+            "features": [
+                "Sfoglia vini per categoria",
+                "Ricerca avanzata: cerca e filtra vini per produttore, annata, prezzo ecc..",
+                "Categoria Bestseller aggiornata in base agli ordini effettuati",
+                "Riepilogo carrello",
+                "Spedizione gratuita per ordini sopra una cifra limite",
+                "Invio email di conferma ordine",
+                "Assistente AI (Sommelier digitale)"
+            ],
+            "cover": "/imgs/wine-commerce-landing.png",
+            "images": {
+                "frontend": [
+                    {
+                        "id": 1,
+                        "url": "/imgs/wine-commerce-landing.png"
+                    },
+                    {
+                        "id": 2,
+                        "url": "/imgs/wine-commerce-results.png"
+                    },
+                    {
+                        "id": 3,
+                        "url": "/imgs/wine-commerce-search.png"
+                    },
+                    {
+                        "id": 4,
+                        "url": "/imgs/wine-commerce-cart.png"
+                    }
+                ],
+                "backend": []
+            },
+            "github": {
+                "frontend": null,
+                "backend": null,
+                "source": "https://github.com/mannuccimattia/wine-commerce"
             }
         }
     ]

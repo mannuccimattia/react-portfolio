@@ -22,7 +22,7 @@ const Projects = () => {
     return (
         <div>
             {projects.length > 0 && projects.map(project => (
-                <div className="project-card rounded-3 row p-4 mb-5" onClick={() => navigate(`/projects/${project.id}`)}>
+                <div className="project-card rounded-3 row p-4 mb-4" onClick={() => navigate(`/projects/${project.id}`)}>
                     <div className="col-4 ps-0">
                         <img src={project.cover} className="img-fluid w-100 rounded-3" alt="Immagine di copertina del progetto" />
                     </div>
