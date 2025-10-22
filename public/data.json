@@ -18,6 +18,7 @@
                 "Interfaccia con tema scuro",
                 "Design responsive"
             ],
+            "cover": "/imgs/price-checker-landing.png",
             "images": {
                 "frontend": [
                     {
@@ -59,49 +60,50 @@
                 "Link Discogs della copia esatta del disco",
                 "Design responsive"
             ],
+            "cover": "/imgs/vinyl-frontend-results.png",
             "images": {
                 "frontend": [
                     {
                         "id": 1,
-                        "url": "/imgs/vinyl-frontend-landing"
+                        "url": "/imgs/vinyl-frontend-landing.png"
                     },
                     {
                         "id": 2,
-                        "url": "/imgs/vinyl-frontend-results"
+                        "url": "/imgs/vinyl-frontend-results.png"
                     },
                     {
                         "id": 3,
-                        "url": "/imgs/vinyl-frontend-detail"
+                        "url": "/imgs/vinyl-frontend-detail.png"
                     }
                 ],
                 "backend": [
                     {
                         "id": 1,
-                        "url": "/imgs/vinyl-backend-landing"
+                        "url": "/imgs/vinyl-backend-landing.png"
                     },
                     {
                         "id": 2,
-                        "url": "/imgs/vinyl-backend-results"
+                        "url": "/imgs/vinyl-backend-results.png"
                     },
                     {
                         "id": 3,
-                        "url": "/imgs/vinyl-backend-detail"
+                        "url": "/imgs/vinyl-backend-detail.png"
                     },
                     {
                         "id": 4,
-                        "url": "/imgs/vinyl-backend-new-vinyl"
+                        "url": "/imgs/vinyl-backend-new-vinyl.png"
                     },
                     {
                         "id": 5,
-                        "url": "/imgs/vinyl-backend-edit-vinyl"
+                        "url": "/imgs/vinyl-backend-edit-vinyl.png"
                     },
                     {
                         "id": 6,
-                        "url": "/imgs/vinyl-backend-labels"
+                        "url": "/imgs/vinyl-backend-labels.png"
                     },
                     {
                         "id": 7,
-                        "url": "/imgs/vinyl-backend-genres"
+                        "url": "/imgs/vinyl-backend-genres.png"
                     }
                 ]
             },
