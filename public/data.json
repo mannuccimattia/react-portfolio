@@ -1,0 +1,114 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "title": "MTG Price Checker",
+            "description": "Applicazione web in React per controllare i prezzi delle carte di Magic: The Gathering utilizzando l'API di Scryfall.",
+            "technologies": [
+                "HTML & CSS",
+                "Javascript",
+                "React",
+                "Scryfall API"
+            ],
+            "features": [
+                "Ricerca carte per nome o collector number",
+                "Sfoglia l'elenco completo dei set cartacei di Magic: The Gathering",
+                "Visualizza informazioni dettagliate sulle carte, inclusi i prezzi",
+                "Link ai principali siti di compravendita",
+                "Interfaccia con tema scuro",
+                "Design responsive"
+            ],
+            "images": {
+                "frontend": [
+                    {
+                        "id": 1,
+                        "url": "/imgs/price-checker-landing.png"
+                    },
+                    {
+                        "id": 2,
+                        "url": "/imgs/price-checker-result.png"
+                    },
+                    {
+                        "id": 3,
+                        "url": "/imgs/price-checker-sets.png"
+                    }
+                ],
+                "backend": []
+            },
+            "github": {
+                "frontend": "https://github.com/mannuccimattia/mtg-card-price-checker",
+                "backend": null
+            }
+        },
+        {
+            "id": 2,
+            "title": "VinylCollector",
+            "description": "Applicazione web in Laravel per gestire la mia collezione di vinili tramite operazioni CRUD ed esporre API REST per un sito vetrina in React",
+            "technologies": [
+                "HTML & CSS",
+                "Javascript",
+                "React",
+                "PHP",
+                "Laravel"
+            ],
+            "features": [
+                "Registrazione utente e privilegi admin per il backend",
+                "Gestione del database: aggiungi, modifica e rimuovi vinili",
+                "Visualizza informazioni dettagliate sui dischi",
+                "Sito vetrina in modalità guest ",
+                "Link Discogs della copia esatta del disco",
+                "Design responsive"
+            ],
+            "images": {
+                "frontend": [
+                    {
+                        "id": 1,
+                        "url": "/imgs/vinyl-frontend-landing"
+                    },
+                    {
+                        "id": 2,
+                        "url": "/imgs/vinyl-frontend-results"
+                    },
+                    {
+                        "id": 3,
+                        "url": "/imgs/vinyl-frontend-detail"
+                    }
+                ],
+                "backend": [
+                    {
+                        "id": 1,
+                        "url": "/imgs/vinyl-backend-landing"
+                    },
+                    {
+                        "id": 2,
+                        "url": "/imgs/vinyl-backend-results"
+                    },
+                    {
+                        "id": 3,
+                        "url": "/imgs/vinyl-backend-detail"
+                    },
+                    {
+                        "id": 4,
+                        "url": "/imgs/vinyl-backend-new-vinyl"
+                    },
+                    {
+                        "id": 5,
+                        "url": "/imgs/vinyl-backend-edit-vinyl"
+                    },
+                    {
+                        "id": 6,
+                        "url": "/imgs/vinyl-backend-labels"
+                    },
+                    {
+                        "id": 7,
+                        "url": "/imgs/vinyl-backend-genres"
+                    }
+                ]
+            },
+            "github": {
+                "frontend": "https://github.com/mannuccimattia/vinyl-collector-frontend",
+                "backend": "https://github.com/mannuccimattia/vinyl-collector-backend"
+            }
+        }
+    ]
+}

@@ -27,6 +27,7 @@ header .end {
 
 .nav-item svg {
   translate: 0 -50%;
+  color: #6c757d;
 }
 
 a.fa-brands {
