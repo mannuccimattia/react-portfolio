@@ -1,9 +1,18 @@
 import { useContext } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import GlobalContext from "../contexts/GlobalContext";
 
 const Header = () => {
 
     const { setActivePage } = useContext(GlobalContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const handleProjectCardClick = (e) => {
+        const page = e.currentTarget.dataset.value;
+        if (location.pathname !== "/") navigate("/");
+        setActivePage(page);
+    }
 
     return (
         <header>
@@ -17,7 +26,10 @@ const Header = () => {
 
             <ul className="mid navbar-nav">
                 <li className="nav-item">
-                    <div className="nav-link d-flex align-items-center" onClick={() => setActivePage("about")}>
+                    <div className="nav-link d-flex align-items-center"
+                        data-value="about"
+                        onClick={handleProjectCardClick}
+                    >
                         <svg className="me-2" width="24" height="48" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 2v22h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
@@ -25,7 +37,10 @@ const Header = () => {
                     </div>
                 </li>
                 <li className="nav-item">
-                    <div className="nav-link d-flex align-items-center" onClick={() => setActivePage("projects")}>
+                    <div className="nav-link d-flex align-items-center"
+                        data-value="projects"
+                        onClick={handleProjectCardClick}
+                    >
                         <svg className="me-2" width="24" height="48" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 2v22h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>

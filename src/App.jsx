@@ -3,6 +3,7 @@ import { useState } from "react";
 import GlobalContext from "./contexts/GlobalContext";
 import MasterLayout from "./layouts/MasterLayout";
 import Homepage from "./pages/Homepage";
+import DetailPage from "./pages/DetailPage";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route element={<MasterLayout />}>
             <Route index element={<Homepage />} />
+            <Route path="projects/:id" element={<DetailPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
