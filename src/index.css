@@ -5,6 +5,7 @@
   padding: 8rem 10rem;
   box-sizing: border-box;
   font-family: "Sansation", sans-serif;
+  position: relative;
 }
 
 hr {
@@ -131,6 +132,14 @@ a.fa-brands:hover,
 .github-link,
 .github-link a {
   color: #6c757d;
+}
+
+footer {
+  position: absolute;
+  bottom: 10px;
+  font-size: 0.75rem;
+  color: #6c757d;
+  width: 90vw !important;
 }
 
 /****** Loader ******/
@@ -403,6 +412,10 @@ body::-webkit-scrollbar-thumb:hover {
     border-top-left-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
     margin: 0.5rem 0;
+  }
+
+  footer {
+    bottom: 0;
   }
 }
 
