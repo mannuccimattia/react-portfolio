@@ -1,16 +1,32 @@
-# React + Vite
+# 🧑‍💻 Mattia Mannucci – Portfolio (Development Repository)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the **source code repository** for my personal portfolio website.  
+The live site is statically deployed to **GitHub Pages** at:  
+👉 https://mannuccimattia.github.io
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎯 Purpose
 
-## React Compiler
+A minimal, responsive portfolio showcasing:
+- Personal introduction
+- Featured projects (with screenshots and GitHub links)
+- Technical skills
+- Contact information ( GitHub, LinkedIn)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Built as a **single-page React application** with client-side navigation.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+- **Framework**: React 18
+- **Styling**: Bootstrap 5 + custom CSS
+- **Routing**: React Router (hash-based for GitHub Pages compatibility)
+- **Data**: Static JSON (`public/data.json`)
+- **Build Tool**: Vite
+- **Deployment**: Manual build → copied to `mannuccimattia.github.io` repo
+
+---
+
+Designed and Devloped by Mattia Mannucci 2025
