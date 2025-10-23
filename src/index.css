@@ -2,8 +2,13 @@
   background: #000000;
   background: linear-gradient(135deg, rgba(0, 0, 0, 1) 0%, rgb(26, 0, 77) 100%);
   height: 100vh;
-  padding: 8rem 10rem 8rem 10rem;
+  padding: 8rem 10rem;
+  box-sizing: border-box;
   font-family: "Sansation", sans-serif;
+}
+
+hr {
+  color: #7b4ff0 !important;
 }
 
 header {
@@ -45,6 +50,10 @@ a.fa-brands:hover {
   margin: 0 auto;
 }
 
+.about-me {
+  font-size: 1.1rem;
+}
+
 .project-card {
   border: 1px #471d9b solid;
   transition: ease-in-out 0.3s;
@@ -59,4 +68,98 @@ a.fa-brands:hover {
 
 .text-bg-main {
   background-color: #471d9b;
+}
+
+.detail-container {
+  width: 90%;
+  margin: 0 auto;
+  max-height: calc(100vh - 16rem);
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding-right: calc(var(--sb-width) + var(--sb-gap));
+  scrollbar-gutter: stable both-edges;
+}
+
+.carousel-item>img {
+  border-radius: 1rem;
+}
+
+.features-list {
+  list-style: none;
+}
+
+.feature {
+  margin-bottom: 0.5rem;
+}
+
+.feature::before {
+  content: "🖈 ";
+  color: #7b4ff0;
+
+}
+
+/****** Scrollbar Customization ******/
+:root {
+  --sb-thumb: #471d9b;
+  --sb-thumb-hover: #5f35d1;
+  --sb-track: rgba(255, 255, 255, 0.04);
+  --sb-width: 12px;
+  --sb-gap: 8px;
+}
+
+/* Firefox */
+.detail-container,
+html,
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--sb-thumb) var(--sb-track);
+}
+
+/* WebKit (Chrome, Edge, Safari, Opera) */
+.detail-container::-webkit-scrollbar,
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: var(--sb-width);
+  height: var(--sb-width);
+}
+
+.detail-container::-webkit-scrollbar-track,
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: var(--sb-track);
+  border-radius: 999px;
+}
+
+/* thumb with a subtle inset border so it doesn't look flush against content */
+.detail-container::-webkit-scrollbar-thumb,
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--sb-thumb), var(--sb-thumb-hover));
+  border-radius: 999px;
+  border: 3px solid rgba(0, 0, 0, 0);
+  /* creates padding between thumb and track */
+  background-clip: padding-box;
+}
+
+/* hover/focus states */
+.detail-container::-webkit-scrollbar-thumb:hover,
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+  background: var(--sb-thumb-hover);
+}
+
+/* make very small scrollbars */
+@media (pointer: coarse) {
+  :root {
+    --sb-width: 16px;
+  }
+}
+
+/* ensure contrast on dark track for accessibility */
+@media (prefers-contrast: more) {
+  :root {
+    --sb-track: rgba(255, 255, 255, 0.06);
+    --sb-thumb: #5b29c4;
+    --sb-thumb-hover: #7b4ff0;
+  }
 }

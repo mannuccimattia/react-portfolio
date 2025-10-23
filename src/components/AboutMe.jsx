@@ -1,6 +1,6 @@
 const AboutMe = () => {
     return (
-        <>
+        <div className="about-me">
             <p>
                 La mia formazione parte dall'artigianato: un lavoro fatto di misure precise, problemi da risolvere e soluzioni pensate fino in fondo. Oggi porto quella stessa mentalità nello sviluppo software.
             </p>
@@ -16,7 +16,7 @@ const AboutMe = () => {
             <p>
                 Ora cerco un ambiente reale dove imparare ogni giorno, dare il mio contributo e crescere come sviluppatore.
             </p>
-        </>
+        </div>
     )
 }
 

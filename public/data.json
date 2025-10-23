@@ -3,7 +3,7 @@
         {
             "id": 1,
             "title": "MTG Price Checker",
-            "description": "Applicazione web in React per controllare i prezzi delle carte di Magic: The Gathering utilizzando l'API di Scryfall.",
+            "description": "Applicazione web in React per controllare i prezzi delle carte di Magic: The Gathering utilizzando le API di Scryfall.",
             "technologies": [
                 "HTML & CSS",
                 "Javascript",
@@ -115,7 +115,7 @@
             }
         },
         {
-            "id": 2,
+            "id": 3,
             "title": "Boolze",
             "description": "Progetto di gruppo. Simulazione di un e-commerce in React connesso a un database in MySQL con Node.js",
             "technologies": [
@@ -143,15 +143,19 @@
                     },
                     {
                         "id": 2,
-                        "url": "/imgs/wine-commerce-results.png"
+                        "url": "/imgs/wine-commerce-search.png"
                     },
                     {
                         "id": 3,
-                        "url": "/imgs/wine-commerce-search.png"
+                        "url": "/imgs/wine-commerce-detail.png"
                     },
                     {
                         "id": 4,
                         "url": "/imgs/wine-commerce-cart.png"
+                    },
+                    {
+                        "id": 5,
+                        "url": "/imgs/wine-commerce-chatbot.png"
                     }
                 ],
                 "backend": []
