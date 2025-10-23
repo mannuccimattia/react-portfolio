@@ -5,7 +5,7 @@ const MasterLayout = () => {
     return (
         <div id="app">
             <div className="container-fluid">
-                <div className="row text-light">
+                <div className="row text-light" id="main-row">
                     <div className="col-12 col-lg-5">
                         <Header />
                     </div>
