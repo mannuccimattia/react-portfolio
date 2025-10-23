@@ -9,7 +9,7 @@ const MasterLayout = () => {
                     <div className="col-12 col-lg-5">
                         <Header />
                     </div>
-                    <div className="col-12 col-lg-7">
+                    <div className="col-12 col-lg-7 h-100 position-relative">
                         <main>
                             <Outlet />
                         </main>

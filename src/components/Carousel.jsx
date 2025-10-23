@@ -10,10 +10,7 @@ const Carousel = ({ project, activeCarousel }) => {
 
         const bs = window.bootstrap;
 
-        if (!bs || !bs.Carousel) {
-            console.warn("Bootstrap Carousel non trovato su window.bootstrap");
-            return;
-        }
+        if (!bs || !bs.Carousel) return;
 
         const carousel = new bs.Carousel(carouselRef.current, { interval: 5000, ride: false });
         return () => carousel.dispose();

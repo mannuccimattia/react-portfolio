@@ -1,16 +1,26 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import GlobalContext from "../contexts/GlobalContext";
 import AboutMe from "../components/AboutMe";
 import Projects from "../components/Projects";
+import Loader from "../components/Loader";
 
 const Homepage = () => {
 
-    const { activePage } = useContext(GlobalContext);
+    const { activePage, isLoading, setIsLoading } = useContext(GlobalContext);
+
+    useEffect(() => {
+        setIsLoading(true);
+
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 500);
+    }, [activePage]);
 
     return (
         <div className="main-container">
-            {activePage === "about" && <AboutMe />}
-            {activePage === "projects" && <Projects />}
+            {isLoading && <Loader />}
+            {!isLoading && activePage === "about" && <AboutMe />}
+            {!isLoading && activePage === "projects" && <Projects />}
         </div>
     )
 }

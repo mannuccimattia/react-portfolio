@@ -4,7 +4,7 @@ import GlobalContext from "../contexts/GlobalContext";
 
 const Header = () => {
 
-    const { activePage, setActivePage } = useContext(GlobalContext);
+    const { activePage, setActivePage, setIsLoading } = useContext(GlobalContext);
     const navigate = useNavigate();
     const location = useLocation();
 
