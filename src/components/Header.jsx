@@ -4,14 +4,14 @@ import GlobalContext from "../contexts/GlobalContext";
 
 const Header = () => {
 
-    const { setActivePage } = useContext(GlobalContext);
+    const { activePage, setActivePage } = useContext(GlobalContext);
     const navigate = useNavigate();
     const location = useLocation();
 
-    const handleProjectCardClick = (e) => {
+    const handleClick = (e) => {
         const page = e.currentTarget.dataset.value;
-        if (location.pathname !== "/") navigate("/");
         setActivePage(page);
+        if (location.pathname !== "/") navigate("/");
     }
 
     return (
@@ -26,9 +26,9 @@ const Header = () => {
 
             <ul className="mid navbar-nav">
                 <li className="nav-item">
-                    <div className="nav-link d-flex align-items-center"
+                    <div className={`nav-link d-flex align-items-center ${activePage === "about" ? "active" : ""}`}
                         data-value="about"
-                        onClick={handleProjectCardClick}
+                        onClick={handleClick}
                     >
                         <svg className="me-2" width="24" height="48" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 2v22h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -37,9 +37,9 @@ const Header = () => {
                     </div>
                 </li>
                 <li className="nav-item">
-                    <div className="nav-link d-flex align-items-center"
+                    <div className={`nav-link d-flex align-items-center ${activePage === "projects" ? "active" : ""}`}
                         data-value="projects"
-                        onClick={handleProjectCardClick}
+                        onClick={handleClick}
                     >
                         <svg className="me-2" width="24" height="48" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 2v22h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -53,6 +53,7 @@ const Header = () => {
                 <a className="nav-link fa-brands fa-github" href="https://github.com/mannuccimattia" target="_blank"></a>
                 <a className="nav-link fa-brands fa-linkedin" href="https://www.linkedin.com/in/mattia-mannucci" target="_blank"></a>
             </div>
+            <hr className="d-lg-none my-5" />
         </header >
     )
 }

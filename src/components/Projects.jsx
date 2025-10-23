@@ -23,11 +23,11 @@ const Projects = () => {
     return (
         <div>
             {projects.length > 0 && projects.map(project => (
-                <div key={`proj-${project.id}`} className="project-card rounded-3 d-flex p-3 mb-4" onClick={() => navigate(`/projects/${project.id}`)}>
-                    <div className="col-4 ps-0">
+                <div key={`proj-${project.id}`} className="project-card rounded-3 d-flex flex-wrap p-3 mb-4" onClick={() => navigate(`/projects/${project.id}`)}>
+                    <div className="col-12 col-xl-4 ps-0">
                         <img src={project.cover} className="img-fluid w-100 rounded-3" alt="Immagine di copertina del progetto" />
                     </div>
-                    <div className="col-8 ps-2 pe-0">
+                    <div className="col-12 col-xl-8 ps-2 pe-0">
                         <h6>{project.title}</h6>
                         <span className="text-secondary">{project.description}</span>
                         <TechBadges project={project} />

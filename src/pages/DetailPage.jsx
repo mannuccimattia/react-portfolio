@@ -1,14 +1,16 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import Carousel from "../components/Carousel";
 import TechBadges from "../components/TechBadges";
+import GlobalContext from "../contexts/GlobalContext";
 
 const DetailPage = () => {
 
     const [project, setProject] = useState(null);
     const [activeCarousel, setActiveCarousel] = useState("frontend");
     const { id } = useParams();
+    const { setActivePage } = useContext(GlobalContext);
 
     const fetchProject = () => {
         fetch("/data.json")
@@ -21,6 +23,7 @@ const DetailPage = () => {
     }
 
     useEffect(() => {
+        setActivePage("projects");
         fetchProject();
     }, [id])
 
@@ -34,16 +37,28 @@ const DetailPage = () => {
                         <button className="btn btn-sm btn btn-outline-primary rounded-pill px-5" disabled>Non sono presenti screenshots del backend per questo progetto</button>
                     </div>
                 ) : (
-                    <div className="text-center mb-3">
-                        <button
-                            className={`btn btn-sm ${activeCarousel === "frontend" ? "active" : ""} btn-outline-primary rounded-start-pill rounded-end-0 px-5`}
-                            onClick={() => setActiveCarousel("frontend")}
-                        >Mostra screenshots Frontend</button>
-                        <button
-                            className={`btn btn-sm ${activeCarousel === "backend" ? "active" : ""} btn-outline-primary rounded-start-0 rounded-end-pill px-5`}
-                            onClick={() => setActiveCarousel("backend")}
-                        >Mostra screenshots Backend</button>
-                    </div>
+                    <>
+                        <div className="text-center mb-3">
+                            <button
+                                className={`btn btn-sm ${activeCarousel === "frontend" ? "active" : ""} btn-outline-primary rounded-start-pill rounded-end-0 px-5`}
+                                onClick={() => setActiveCarousel("frontend")}
+                            >Mostra screenshots Frontend</button>
+                            <button
+                                className={`btn btn-sm ${activeCarousel === "backend" ? "active" : ""} btn-outline-primary rounded-start-0 rounded-end-pill px-5`}
+                                onClick={() => setActiveCarousel("backend")}
+                            >Mostra screenshots Backend</button>
+                        </div>
+                        {/* <div className="d-block d-md-none text-center mb-3">
+                            <button
+                                className={`btn btn-sm ${activeCarousel === "frontend" ? "active" : ""} btn-outline-primary rounded-pill mb-3`}
+                                onClick={() => setActiveCarousel("frontend")}
+                            >Mostra screenshots Frontend</button>
+                            <button
+                                className={`btn btn-sm ${activeCarousel === "backend" ? "active" : ""} btn-outline-primary rounded-pill`}
+                                onClick={() => setActiveCarousel("backend")}
+                            >Mostra screenshots Backend</button>
+                        </div> */}
+                    </>
                 )}
                 <Carousel project={project} activeCarousel={activeCarousel} />
                 <div className="d-flex justify-content-center">

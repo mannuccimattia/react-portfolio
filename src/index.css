@@ -18,7 +18,7 @@ hr {
   --bs-btn-active-color: #fff !important;
 }
 
-.active {
+.btn.active {
   color: #fff !important;
 }
 
@@ -49,6 +49,10 @@ header .end {
 
 .nav-item svg {
   translate: 0 -50%;
+}
+
+.nav-link.active {
+  color: #7b4ff0 !important;
 }
 
 a.fa-brands {
@@ -189,18 +193,87 @@ body::-webkit-scrollbar-thumb:hover {
   background: var(--sb-thumb-hover);
 }
 
-/* make very small scrollbars */
+/************* MEDIA QUERIES *************/
+/* Scrollbars */
 @media (pointer: coarse) {
   :root {
     --sb-width: 16px;
   }
 }
 
-/* ensure contrast on dark track for accessibility */
 @media (prefers-contrast: more) {
   :root {
     --sb-track: rgba(255, 255, 255, 0.06);
     --sb-thumb: #5b29c4;
     --sb-thumb-hover: #7b4ff0;
   }
+}
+
+/* Layout */
+@media (max-width: 1599.98px) {
+  .detail-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .project-card img {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+
+  /* restore normal page flow on small screens */
+  #app {
+    height: auto !important;
+    min-height: 100vh !important;
+    padding: 2rem !important;
+    /* smaller padding for mobile */
+  }
+
+  /* let the whole page scroll instead of inner scroll areas */
+  .main-container,
+  .detail-container {
+    max-height: none !important;
+    overflow: visible !important;
+    overflow-y: visible !important;
+    padding-right: 0 !important;
+    scrollbar-gutter: auto !important;
+  }
+
+  /* restore default scrollbar behavior where possible */
+  .main-container,
+  .detail-container {
+    -ms-overflow-style: auto !important;
+    scrollbar-width: auto !important;
+  }
+
+  /* WebKit: don't force hidden scrollbars for main/detail on mobile */
+  .main-container::-webkit-scrollbar,
+  .detail-container::-webkit-scrollbar {
+    width: auto !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+  /* ensure body/html allow normal scrolling */
+  html,
+  body {
+    height: auto !important;
+    overflow: auto !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+
+  .detail-container .btn.rounded-end-0,
+  .detail-container .btn.rounded-start-0 {
+    border-top-right-radius: var(--bs-border-radius-pill) !important;
+    border-top-left-radius: var(--bs-border-radius-pill) !important;
+    border-bottom-right-radius: var(--bs-border-radius-pill) !important;
+    border-bottom-left-radius: var(--bs-border-radius-pill) !important;
+    margin: 0.5rem 0;
+  }
+
 }
