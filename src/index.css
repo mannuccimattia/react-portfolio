@@ -11,6 +11,22 @@ hr {
   color: #7b4ff0 !important;
 }
 
+.btn-outline-primary {
+  color: #7b4ff0 !important;
+  border-color: #7b4ff0 !important;
+  --bs-btn-active-bg: #7b4ff0 !important;
+  --bs-btn-active-color: #fff !important;
+}
+
+.active {
+  color: #fff !important;
+}
+
+.btn-outline-primary:hover {
+  color: #fff !important;
+  background-color: #7a4ff096 !important;
+}
+
 header {
   height: 100%;
 }
@@ -41,7 +57,9 @@ a.fa-brands {
 }
 
 .nav-item:hover,
-a.fa-brands:hover {
+a.fa-brands:hover,
+.github-link:hover,
+.github-link:hover a {
   color: #471d9b !important;
 }
 
@@ -104,7 +122,11 @@ a.fa-brands:hover {
 .feature::before {
   content: "🖈 ";
   color: #7b4ff0;
+}
 
+.github-link,
+.github-link a {
+  color: #6c757d;
 }
 
 /****** Scrollbar Customization ******/

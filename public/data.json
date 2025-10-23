@@ -37,9 +37,9 @@
                 "backend": []
             },
             "github": {
-                "frontend": "https://github.com/mannuccimattia/mtg-card-price-checker",
+                "frontend": null,
                 "backend": null,
-                "source": null
+                "source": "https://github.com/mannuccimattia/mtg-card-price-checker"
             }
         },
         {
