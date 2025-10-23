@@ -1,5 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { use, useState } from "react";
+import { HashRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 import GlobalContext from "./contexts/GlobalContext";
 import MasterLayout from "./layouts/MasterLayout";
 import Homepage from "./pages/Homepage";
@@ -13,14 +13,14 @@ function App() {
 
   return (
     <GlobalContext.Provider value={{ activePage, setActivePage, isLoading, setIsLoading }}>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route element={<MasterLayout />}>
             <Route index element={<Homepage />} />
             <Route path="projects/:id" element={<DetailPage />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </GlobalContext.Provider>
   )
 }
