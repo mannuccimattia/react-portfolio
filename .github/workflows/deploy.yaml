@@ -24,9 +24,19 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # 4. Build dell'Applicazione React
+      # 4. Build dell'Applicazione React (MODIFICATO PER BASE PATH)
       - name: Build React App
-        run: npm run build
+        run: |
+          if [ "${{ github.ref }}" == "refs/heads/staging" ]; then
+            # Per Staging, usa l'URL pubblico /staging/
+            # CI=false è spesso necessario per build successivi in CI
+            CI=false npm run build --public-url /staging/
+          else
+            # Per Main, usa l'URL pubblico di root (/)
+            CI=false npm run build
+          fi
+        env:
+          NODE_OPTIONS: --max_old_space_size=4096
 
       # 5. Deploy Cross-Repository
       - name: Deploy to User Pages Repository
