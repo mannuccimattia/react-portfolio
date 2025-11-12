@@ -24,16 +24,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # 4. Build dell'Applicazione React (MODIFICATO PER BASE PATH)
-      - name: Build React App
+      # 4. Build dell'Applicazione React (SOLUZIONE VITE)
+      - name: Build React App (Vite Base Path)
         run: |
           if [ "${{ github.ref }}" == "refs/heads/staging" ]; then
-            # Per Staging, usa l'URL pubblico /staging/
-            # CI=false è spesso necessario per build successivi in CI
-            CI=false npm run build --public-url /staging/
+            # Usa il flag --base corretto per Vite per definire la base path degli asset
+            npm run build -- --base=/staging/ 
           else
-            # Per Main, usa l'URL pubblico di root (/)
-            CI=false npm run build
+            # Per Main, nessun flag è necessario (la base è la root)
+            npm run build
           fi
         env:
           NODE_OPTIONS: --max_old_space_size=4096
