@@ -1,12 +1,15 @@
 import { useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import GlobalContext from "../contexts/GlobalContext";
+import { BASE_PATH } from "../utils/basePath";
 
 const Header = () => {
 
     const { activePage, setActivePage, setIsLoading } = useContext(GlobalContext);
     const navigate = useNavigate();
     const location = useLocation();
+
+    const logoSrc = `${BASE_PATH}/imgs/mm-circle.png`;
 
     const handleClick = (e) => {
         const page = e.currentTarget.dataset.value;
@@ -17,7 +20,7 @@ const Header = () => {
     return (
         <header>
             <div className="top d-flex align-items-center">
-                <img src="/imgs/mm-circle.png" alt="Website logo" className="img-fluid" id="header-logo" />
+                <img src={logoSrc} alt="Website logo" className="img-fluid" id="header-logo" />
                 <div className="ms-3">
                     <h1 className='fw-bold'>Mattia Mannucci</h1>
                     <h5 className='fw-light'>Jr Full Stack Web Developer</h5>
