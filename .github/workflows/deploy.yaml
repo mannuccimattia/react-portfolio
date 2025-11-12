@@ -1,0 +1,62 @@
+name: Deploy React Portfolio (Staging & Prod)
+
+on:
+  push:
+    branches:
+      - "main"    # Trigger per Produzione
+      - "staging" # Trigger per Staging
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Checkout del codice
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 2. Setup Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # 3. Installazione dipendenze
+      - name: Install dependencies
+        run: npm ci
+
+      # 4. Build dell'Applicazione React (Aggiungi logica condizionale per la Base Path)
+      - name: Build React App (Conditional Base Path)
+        run: |
+          if [ "${{ github.ref }}" == "refs/heads/staging" ]; then
+            # Usa un percorso relativo './' per Staging
+            npm run build -- --base=./ 
+          else
+            # Per Main, usa il build standard (o path assoluto '/')
+            npm run build
+          fi
+
+      # 5. Deploy Cross-Repository
+      - name: Deploy to User Pages Repository
+        uses: peaceiris/actions-gh-pages@v3 
+        with:
+          # TOKEN: Utilizza il secret salvato
+          personal_token: ${{ secrets.DEPLOY_TOKEN }} 
+          
+          # REPOSITORY DI DESTINAZIONE: Il tuo sito GitHub Pages
+          external_repository: mannuccimattia/mannuccimattia.github.io 
+          
+          # BRANCH DI DESTINAZIONE: Il branch principale del repo di deploy
+          publish_branch: main 
+          
+          # CARTELLA SORGENTE: L'output del build
+          publish_dir: ./dist 
+          
+          # LOGICA CONDIZIONALE PER STAGING/PRODUZIONE
+          # Se il branch è 'staging', pubblica in mannuccimattia.github.io/staging/
+          # Altrimenti, pubblica nella root (.).
+          destination_dir: ${{ github.ref == 'refs/heads/staging' && 'staging' || '.' }}
+          
+          # Dettagli del commit
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
