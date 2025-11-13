@@ -8,7 +8,8 @@
   position: relative;
 }
 
-hr {
+hr,
+h1 {
   color: #7b4ff0 !important;
 }
 
