@@ -156,7 +156,8 @@ a.fa-brands:hover,
 
 .icon {
   width: 60px;
-  height: auto;
+  object-fit: contain;
+  object-position: center;
   min-height: 65px;
 }
 
