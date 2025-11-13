@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import GlobalContext from "../contexts/GlobalContext";
-import { BASE_PATH } from "../utils/basePath";
 
 const Header = () => {
 
@@ -9,7 +8,7 @@ const Header = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const logoSrc = `${BASE_PATH}/imgs/mm-circle.png`;
+    const logoSrc = "/imgs/mm-circle.png";
 
     const handleClick = (e) => {
         const page = e.currentTarget.dataset.value;

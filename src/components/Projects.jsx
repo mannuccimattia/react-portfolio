@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom";
 import TechBadges from "./TechBadges";
-import { BASE_PATH } from "../utils/basePath";
 
 const Projects = () => {
 
@@ -9,7 +8,7 @@ const Projects = () => {
     const navigate = useNavigate();
 
     const fetchProjects = () => {
-        fetch(`${BASE_PATH}/data.json`)
+        fetch("/data.json")
             .then(res => res.json())
             .then(data => {
                 setProjects(data.projects);
@@ -26,7 +25,7 @@ const Projects = () => {
             {projects.length > 0 && projects.map(project => (
                 <div key={`proj-${project.id}`} className="project-card rounded-3 d-flex flex-wrap p-3 mb-4" onClick={() => navigate(`/projects/${project.id}`)}>
                     <div className="col-12 col-xl-4 ps-0">
-                        <img src={`${BASE_PATH}${project.cover}`} className="img-fluid w-100 rounded-3" alt="Immagine di copertina del progetto" />
+                        <img src={project.cover} className="img-fluid w-100 rounded-3" alt="Immagine di copertina del progetto" />
                     </div>
                     <div className="col-12 col-xl-8 ps-2 pe-0">
                         <h6>{project.title}</h6>
