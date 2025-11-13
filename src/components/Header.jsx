@@ -5,7 +5,7 @@ import { BASE_PATH } from "../utils/basePath";
 
 const Header = () => {
 
-    const { activePage, setActivePage, setIsLoading } = useContext(GlobalContext);
+    const { activePage, setActivePage } = useContext(GlobalContext);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -48,6 +48,17 @@ const Header = () => {
                             <path d="M3 2v22h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                         PROGETTI
+                    </div>
+                </li>
+                <li className="nav-item">
+                    <div className={`nav-link d-flex align-items-center ${activePage === "skills" ? "active" : ""}`}
+                        data-value="skills"
+                        onClick={handleClick}
+                    >
+                        <svg className="me-2" width="24" height="48" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 2v22h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                        SKILLS
                     </div>
                 </li>
             </ul>

@@ -57,6 +57,6 @@ jobs:
           destination_dir: ${{ github.ref == 'refs/heads/staging' && 'staging' || '.' }}
           
           # Dettagli del commit
-          force_orphan: true
+          force_orphan: ${{ github.ref == 'refs/heads/staging' }}
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'

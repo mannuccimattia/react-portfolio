@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import GlobalContext from "../contexts/GlobalContext";
 import AboutMe from "../components/AboutMe";
 import Projects from "../components/Projects";
+import Skills from "../components/Skills";
 import Loader from "../components/Loader";
 
 const Homepage = () => {
@@ -14,7 +15,11 @@ const Homepage = () => {
 
         const timer = setTimeout(() => {
             setContent(
-                activePage === "about" ? <AboutMe /> : <Projects />
+                activePage === "about"
+                    ? <AboutMe />
+                    : activePage === "skills"
+                        ? <Skills />
+                        : <Projects />
             );
             setIsLoading(false);
         }, 500);
