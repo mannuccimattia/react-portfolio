@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { BASE_PATH } from "../utils/basePath";
 
 const Carousel = ({ project, activeCarousel }) => {
 
@@ -38,7 +37,7 @@ const Carousel = ({ project, activeCarousel }) => {
             <div className="carousel-inner">
                 {imagesToCycle.map((img, index) => (
                     <div key={`img-${img.id}`} className={`carousel-item ${index === 0 ? "active" : ""}`}>
-                        <img className="d-block w-100" src={`${BASE_PATH}${img.url}`} alt={`Screenshot ${img.id}`} />
+                        <img className="d-block w-100" src={img.url} alt={`Screenshot ${img.id}`} />
                     </div>
                 ))}
             </div>

@@ -7,7 +7,6 @@ import GlobalContext from "../contexts/GlobalContext";
 import HandleActiveCarousel from "../components/HandleActiveCarousel";
 import HandleGithubLinks from "../components/HandleGithubLinks";
 import Loader from "../components/Loader";
-import { BASE_PATH } from "../utils/basePath";
 
 const DetailPage = () => {
 
@@ -17,7 +16,7 @@ const DetailPage = () => {
     const { setActivePage, isLoading, setIsLoading } = useContext(GlobalContext);
 
     const fetchProject = () => {
-        fetch(`${BASE_PATH}/data.json`)
+        fetch("/data.json")
             .then(res => res.json())
             .then(data => {
                 const reqProject = data.projects.find(project => project.id === parseInt(id));
