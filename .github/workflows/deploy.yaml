@@ -3,7 +3,7 @@ name: Deploy React Portfolio (Staging & Prod)
 on:
   push:
     branches:
-      - "main"    # Trigger per Produzione
+      - "main" # Trigger per Produzione
       - "staging" # Trigger per Staging
 
 jobs:
@@ -29,42 +29,35 @@ jobs:
       - name: Build React App (Conditional Base Path)
         run: |
           if [ "${{ github.ref }}" == "refs/heads/staging" ]; then
-            npm run build -- --base=./ 
+            npm run build -- --base=./
           else
             npm run build
           fi
 
-      # 5. Deploy Staging (Solo push su 'staging')
-      # Deploya sul branch isolato 'staging-pages'
+      # 5. Deploy Staging (Deploya nella cartella 'staging' del branch 'main')
       - name: Deploy Staging Environment
         if: github.ref == 'refs/heads/staging'
-        uses: peaceiris/actions-gh-pages@v3 
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.DEPLOY_TOKEN }} 
-          external_repository: mannuccimattia/mannuccimattia.github.io 
-          # BRANCH ISOLATO PER STAGING
-          publish_branch: staging-pages 
-          publish_dir: ./dist 
-          # Pubblica nella root del branch isolato (che sarà servita in /staging/)
-          destination_dir: .
-          # force_orphan qui è sicuro, perché pulisce solo staging-pages
-          force_orphan: true 
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
+          personal_token: ${{ secrets.DEPLOY_TOKEN }}
+          external_repository: mannuccimattia/mannuccimattia.github.io
+          publish_branch: main
+          publish_dir: ./dist
+          destination_dir: staging
+          force_orphan: true
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
 
-      # 6. Deploy Produzione (Solo push su 'main')
-      # Continua a deployare sul branch 'main'
+      # 6. Deploy Produzione (Deploya nella root del branch 'main')
       - name: Deploy Production Environment
         if: github.ref == 'refs/heads/main'
-        uses: peaceiris/actions-gh-pages@v3 
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.DEPLOY_TOKEN }} 
-          external_repository: mannuccimattia/mannuccimattia.github.io 
-          # BRANCH MAIN PER PRODUZIONE
-          publish_branch: main 
-          publish_dir: ./dist 
+          personal_token: ${{ secrets.DEPLOY_TOKEN }}
+          external_repository: mannuccimattia/mannuccimattia.github.io
+          publish_branch: main
+          publish_dir: ./dist
           destination_dir: .
-          # force_orphan è disattivato per non cancellare la cartella di staging
           force_orphan: false
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
