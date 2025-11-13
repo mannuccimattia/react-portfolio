@@ -1,0 +1,95 @@
+{
+    "frontend": [
+        {
+            "id": 1,
+            "name": "HTML",
+            "icon": "/imgs/skills/html.svg"
+        },
+        {
+            "id": 2,
+            "name": "CSS",
+            "icon": "/imgs/skills/css.svg"
+        },
+        {
+            "id": 3,
+            "name": "JavaScript",
+            "icon": "/imgs/skills/javascript.svg"
+        },
+        {
+            "id": 4,
+            "name": "React",
+            "icon": "/imgs/skills/react.svg"
+        }
+    ],
+    "backend": [
+        {
+            "id": 1,
+            "name": "Node.js",
+            "icon": "/imgs/skills/node.svg"
+        },
+        {
+            "id": 2,
+            "name": "Express",
+            "icon": "/imgs/skills/express.svg"
+        },
+        {
+            "id": 3,
+            "name": "MySQL",
+            "icon": "/imgs/skills/mysql.svg"
+        },
+        {
+            "id": 4,
+            "name": "PHP",
+            "icon": "/imgs/skills/php.svg"
+        },
+        {
+            "id": 5,
+            "name": "Laravel",
+            "icon": "/imgs/skills/laravel.svg"
+        }
+    ],
+    "tools": [
+        {
+            "id": 1,
+            "name": "Git",
+            "icon": "/imgs/skills/git.svg"
+        },
+        {
+            "id": 2,
+            "name": "GitHub",
+            "icon": "/imgs/skills/github.svg"
+        },
+        {
+            "id": 3,
+            "name": "Postman",
+            "icon": "/imgs/skills/postman.svg"
+        },
+        {
+            "id": 4,
+            "name": "XAMPP",
+            "icon": "/imgs/skills/xampp.svg"
+        }
+    ],
+    "editing": [
+        {
+            "id": 1,
+            "name": "AutoCAD",
+            "icon": "/imgs/skills/autocad.svg"
+        },
+        {
+            "id": 2,
+            "name": "Photoshop",
+            "icon": "/imgs/skills/photoshop.svg"
+        },
+        {
+            "id": 3,
+            "name": "GIMP",
+            "icon": "/imgs/skills/gimp.svg"
+        },
+        {
+            "id": 4,
+            "name": "CorelDRAW",
+            "icon": "/imgs/skills/corel.svg"
+        }
+    ]
+}

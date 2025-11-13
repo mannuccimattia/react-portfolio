@@ -24,39 +24,47 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # 4. Build dell'Applicazione React (Aggiungi logica condizionale per la Base Path)
+      # 4. Build dell'Applicazione React (Conditional Base Path)
+      # Il base path viene impostato a './' per staging (per percorsi relativi)
       - name: Build React App (Conditional Base Path)
         run: |
           if [ "${{ github.ref }}" == "refs/heads/staging" ]; then
-            # Usa un percorso relativo './' per Staging
             npm run build -- --base=./ 
           else
-            # Per Main, usa il build standard (o path assoluto '/')
             npm run build
           fi
 
-      # 5. Deploy Cross-Repository
-      - name: Deploy to User Pages Repository
+      # 5. Deploy Staging (Solo push su 'staging')
+      # Deploya sul branch isolato 'staging-pages'
+      - name: Deploy Staging Environment
+        if: github.ref == 'refs/heads/staging'
         uses: peaceiris/actions-gh-pages@v3 
         with:
-          # TOKEN: Utilizza il secret salvato
           personal_token: ${{ secrets.DEPLOY_TOKEN }} 
-          
-          # REPOSITORY DI DESTINAZIONE: Il tuo sito GitHub Pages
           external_repository: mannuccimattia/mannuccimattia.github.io 
-          
-          # BRANCH DI DESTINAZIONE: Il branch principale del repo di deploy
-          publish_branch: main 
-          
-          # CARTELLA SORGENTE: L'output del build
+          # BRANCH ISOLATO PER STAGING
+          publish_branch: staging-pages 
           publish_dir: ./dist 
-          
-          # LOGICA CONDIZIONALE PER STAGING/PRODUZIONE
-          # Se il branch è 'staging', pubblica in mannuccimattia.github.io/staging/
-          # Altrimenti, pubblica nella root (.).
-          destination_dir: ${{ github.ref == 'refs/heads/staging' && 'staging' || '.' }}
-          
-          # Dettagli del commit
-          force_orphan: true
+          # Pubblica nella root del branch isolato (che sarà servita in /staging/)
+          destination_dir: .
+          # force_orphan qui è sicuro, perché pulisce solo staging-pages
+          force_orphan: true 
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+
+      # 6. Deploy Produzione (Solo push su 'main')
+      # Continua a deployare sul branch 'main'
+      - name: Deploy Production Environment
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3 
+        with:
+          personal_token: ${{ secrets.DEPLOY_TOKEN }} 
+          external_repository: mannuccimattia/mannuccimattia.github.io 
+          # BRANCH MAIN PER PRODUZIONE
+          publish_branch: main 
+          publish_dir: ./dist 
+          destination_dir: .
+          # force_orphan è disattivato per non cancellare la cartella di staging
+          force_orphan: false
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
