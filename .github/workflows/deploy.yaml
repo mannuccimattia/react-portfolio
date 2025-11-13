@@ -35,28 +35,32 @@ jobs:
             npm run build
           fi
 
-      # 5. Deploy Cross-Repository
-      - name: Deploy to User Pages Repository
+      # 5. Deploy Staging (Solo se branch == staging)
+      - name: Deploy Staging
+        if: github.ref == 'refs/heads/staging'
         uses: peaceiris/actions-gh-pages@v3 
         with:
-          # TOKEN: Utilizza il secret salvato
           personal_token: ${{ secrets.DEPLOY_TOKEN }} 
-          
-          # REPOSITORY DI DESTINAZIONE: Il tuo sito GitHub Pages
           external_repository: mannuccimattia/mannuccimattia.github.io 
-          
-          # BRANCH DI DESTINAZIONE: Il branch principale del repo di deploy
           publish_branch: main 
-          
-          # CARTELLA SORGENTE: L'output del build
           publish_dir: ./dist 
-          
-          # LOGICA CONDIZIONALE PER STAGING/PRODUZIONE
-          # Se il branch è 'staging', pubblica in mannuccimattia.github.io/staging/
-          # Altrimenti, pubblica nella root (.).
-          destination_dir: ${{ github.ref == 'refs/heads/staging' && 'staging' || '.' }}
-          
-          # Dettagli del commit
-          force_orphan: ${{ github.ref == 'refs/heads/staging' }}
+          # Configurazione fissa per Staging
+          destination_dir: staging
+          force_orphan: true 
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+
+      # 6. Deploy Produzione (Solo se branch == main)
+      - name: Deploy Production
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3 
+        with:
+          personal_token: ${{ secrets.DEPLOY_TOKEN }} 
+          external_repository: mannuccimattia/mannuccimattia.github.io 
+          publish_branch: main 
+          publish_dir: ./dist 
+          # Configurazione fissa per Produzione
+          destination_dir: .
+          force_orphan: false # CRITICO: Usa false in Produzione
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
