@@ -19,17 +19,6 @@ const Skills = () => {
 
     return (
         <div>
-            {/* {skills.length > 0 && skills.map(skill => (
-                <div key={`proj-${skill.id}`} className="project-card rounded-3 d-flex flex-wrap p-3 mb-4">
-                    <div className="col-12 col-xl-4 ps-0">
-                        <img src={`${BASE_PATH}${skill.icon}`} className="img-fluid w-100 rounded-3" alt={`Icona ${skill.name}`} />
-                    </div>
-                    <div className="col-12 col-xl-8 ps-2 pe-0">
-                        <h6>{skill.name}</h6>
-                    </div>
-                </div>
-            ))} */}
-
             {skills && Object.keys(skills).length > 0 && (
                 Object.keys(skills).map(sectionKey => (
                     <div key={sectionKey} className="row skills-row justify-content-center justify-content-sm-start flex-wrap">
