@@ -47,6 +47,7 @@ header .end {
   cursor: pointer;
   margin: 0.7rem 0;
   width: 120px;
+  color: #6c757d;
 }
 
 .nav-item svg {
@@ -156,9 +157,9 @@ a.fa-brands:hover,
 
 .icon {
   width: 60px;
+  height: 60px !important;
   object-fit: contain;
   object-position: center;
-  min-height: 65px;
 }
 
 .section-title {
