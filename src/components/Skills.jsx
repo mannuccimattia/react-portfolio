@@ -5,7 +5,7 @@ const Skills = () => {
 
     const getSkillIconUrl = (iconPath) => {
         if (!iconPath) return "";
-        const fileName = iconPath.split("/").pop();
+        const fileName = `${iconPath}.svg`;
         return new URL(`../assets/skills/${fileName}`, import.meta.url).href;
     };
 
