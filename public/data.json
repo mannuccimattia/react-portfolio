@@ -18,20 +18,20 @@
                 "Interfaccia con tema scuro",
                 "Design responsive"
             ],
-            "cover": "/imgs/price-checker-landing.png",
+            "cover": "price-checker-landing",
             "images": {
                 "frontend": [
                     {
                         "id": 1,
-                        "url": "/imgs/price-checker-landing.png"
+                        "url": "price-checker-landing"
                     },
                     {
                         "id": 2,
-                        "url": "/imgs/price-checker-result.png"
+                        "url": "price-checker-result"
                     },
                     {
                         "id": 3,
-                        "url": "/imgs/price-checker-sets.png"
+                        "url": "price-checker-sets"
                     }
                 ],
                 "backend": []
@@ -61,50 +61,50 @@
                 "Link Discogs della copia esatta del disco",
                 "Design responsive"
             ],
-            "cover": "/imgs/vinyl-frontend-results.png",
+            "cover": "vinyl-frontend-results",
             "images": {
                 "frontend": [
                     {
                         "id": 1,
-                        "url": "/imgs/vinyl-frontend-landing.png"
+                        "url": "vinyl-frontend-landing"
                     },
                     {
                         "id": 2,
-                        "url": "/imgs/vinyl-frontend-results.png"
+                        "url": "vinyl-frontend-results"
                     },
                     {
                         "id": 3,
-                        "url": "/imgs/vinyl-frontend-detail.png"
+                        "url": "vinyl-frontend-detail"
                     }
                 ],
                 "backend": [
                     {
                         "id": 1,
-                        "url": "/imgs/vinyl-backend-landing.png"
+                        "url": "vinyl-backend-landing"
                     },
                     {
                         "id": 2,
-                        "url": "/imgs/vinyl-backend-results.png"
+                        "url": "vinyl-backend-results"
                     },
                     {
                         "id": 3,
-                        "url": "/imgs/vinyl-backend-detail.png"
+                        "url": "vinyl-backend-detail"
                     },
                     {
                         "id": 4,
-                        "url": "/imgs/vinyl-backend-new-vinyl.png"
+                        "url": "vinyl-backend-new-vinyl"
                     },
                     {
                         "id": 5,
-                        "url": "/imgs/vinyl-backend-edit-vinyl.png"
+                        "url": "vinyl-backend-edit-vinyl"
                     },
                     {
                         "id": 6,
-                        "url": "/imgs/vinyl-backend-labels.png"
+                        "url": "vinyl-backend-labels"
                     },
                     {
                         "id": 7,
-                        "url": "/imgs/vinyl-backend-genres.png"
+                        "url": "vinyl-backend-genres"
                     }
                 ]
             },
@@ -134,28 +134,28 @@
                 "Invio email di conferma ordine",
                 "Assistente AI (Sommelier digitale)"
             ],
-            "cover": "/imgs/wine-commerce-landing.png",
+            "cover": "wine-commerce-landing",
             "images": {
                 "frontend": [
                     {
                         "id": 1,
-                        "url": "/imgs/wine-commerce-landing.png"
+                        "url": "wine-commerce-landing"
                     },
                     {
                         "id": 2,
-                        "url": "/imgs/wine-commerce-search.png"
+                        "url": "wine-commerce-search"
                     },
                     {
                         "id": 3,
-                        "url": "/imgs/wine-commerce-detail.png"
+                        "url": "wine-commerce-detail"
                     },
                     {
                         "id": 4,
-                        "url": "/imgs/wine-commerce-cart.png"
+                        "url": "wine-commerce-cart"
                     },
                     {
                         "id": 5,
-                        "url": "/imgs/wine-commerce-chatbot.png"
+                        "url": "wine-commerce-chatbot"
                     }
                 ],
                 "backend": []

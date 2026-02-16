@@ -6,7 +6,7 @@ const Carousel = ({ project, activeCarousel }) => {
 
     const getProjectImageUrl = (imagePath) => {
         if (!imagePath) return "";
-        const fileName = imagePath.split("/").pop();
+        const fileName = `${imagePath}.png`;
         return new URL(`../assets/projects/${fileName}`, import.meta.url).href;
     };
 
