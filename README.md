@@ -19,8 +19,8 @@ yourEamil: ------------- `mannuccimattia`,
 projectTitle: ---------- `Mattia Mannucci - Portfolio`,
 projectDescription: ---- `This is the <b>source code repository</b> for my personal portfolio website. The live site is deployed with <b>GitHub Pages</b> using GitHub Actions at 👉 <a href="tps://mannuccimattia.github.io`,">mannuccimattia.gihub.io</a>
 projectLicense: -------- `Unlicense`,
-projectLogo: ----------- `./public/imgs/mm-circle.png`,
-projectScreenshot: ----- `./public/imgs/portfolio-prev.png`
+projectLogo: ----------- `./public/mm-circle.png`,
+projectScreenshot: ----- `./public/portfolio-prev.png`
  -->
 
 [![Contributors][contributors-shield]][contributors-url]
@@ -36,7 +36,7 @@ projectScreenshot: ----- `./public/imgs/portfolio-prev.png`
 <br />
 <div align="center">
   <a href="https://github.com/mannuccimattia/react-portfolio">
-    <img src="./public/imgs/mm-circle.png" alt="Logo" width="80" height="80">
+    <img src="./public/mm-circle.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Mattia Mannucci - Portfolio</h3>
@@ -192,7 +192,7 @@ Project Link: [https://github.com/mannuccimattia/react-portfolio](https://github
 [license-url]: https://github.com/mannuccimattia/react-portfolio/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/mattia-mannucci
-[product-screenshot]: ./public/imgs/portfolio-prev.png
+[product-screenshot]: ./public/portfolio-prev.png
 <!-- Shields.io badges -->
 [HTML]: https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white
 [HTML-url]: https://developer.mozilla.org/en-US/docs/Web/HTML

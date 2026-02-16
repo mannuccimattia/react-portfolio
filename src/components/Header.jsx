@@ -8,7 +8,7 @@ const Header = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const logoSrc = "/imgs/mm-circle.png";
+    const logoSrc = "/mm-circle.png";
 
     const handleClick = (e) => {
         const page = e.currentTarget.dataset.value;
