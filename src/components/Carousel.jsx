@@ -4,6 +4,12 @@ const Carousel = ({ project, activeCarousel }) => {
 
     const carouselRef = useRef(null);
 
+    const getProjectImageUrl = (imagePath) => {
+        if (!imagePath) return "";
+        const fileName = imagePath.split("/").pop();
+        return new URL(`../assets/projects/${fileName}`, import.meta.url).href;
+    };
+
     // initialize Bootstrap Carousel after project loads
     useEffect(() => {
         if (!project || !carouselRef.current) return;
@@ -37,7 +43,7 @@ const Carousel = ({ project, activeCarousel }) => {
             <div className="carousel-inner">
                 {imagesToCycle.map((img, index) => (
                     <div key={`img-${img.id}`} className={`carousel-item ${index === 0 ? "active" : ""}`}>
-                        <img className="d-block w-100" src={img.url} alt={`Screenshot ${img.id}`} />
+                        <img className="d-block w-100" src={getProjectImageUrl(img.url)} alt={`Screenshot ${img.id}`} />
                     </div>
                 ))}
             </div>
