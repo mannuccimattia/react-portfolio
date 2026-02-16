@@ -3,13 +3,13 @@ name: Deploy React Portfolio (Production Only)
 on:
   push:
     branches:
-      - "main" # Trigger solo per il branch 'main'
+      - "main"
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      # 1. Checkout del codice
+      # 1. Checkout
       - name: Checkout Code
         uses: actions/checkout@v4
 
@@ -19,35 +19,31 @@ jobs:
         with:
           node-version: 22
 
-      # 3. Installazione dipendenze
+      # 3. Install dependencies
       - name: Install dependencies
         run: npm ci
 
-      # 4. Build dell'Applicazione React per la Root (Path Assoluto/Root-Based)
-      # Non serve più la logica condizionale o --base=./
+      # 4. Build React App for Production
       - name: Build React App for Production
         run: npm run build
 
-      - name: Upload Build Artifact for Inspection
-        uses: actions/upload-artifact@v4
-        with:
-          name: debug-dist-folder
-          path: ./dist
-
-      # # 5. Deploy Produzione (Utilizzando Peaceiris)
-      # - name: Deploy Production Environment (Root)
-      #   uses: peaceiris/actions-gh-pages@v3
+      # TESTING. Create debug dist zip file (Comment Step 5 to avoid pushing to live)
+      # - name: Upload Build Artifact for Inspection
+      #   uses: actions/upload-artifact@v4
       #   with:
-      #     personal_token: ${{ secrets.DEPLOY_TOKEN }}
-      #     external_repository: mannuccimattia/mannuccimattia.github.io
+      #     name: debug-dist-folder
+      #     path: ./dist
 
-      #     # Destinazione: La root del repository di deploy
-      #     publish_branch: main
-      #     publish_dir: ./dist
-      #     destination_dir: .
+      # 5. Deploy Production Environment
+      - name: Deploy Production Environment (Root)
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.DEPLOY_TOKEN }}
+          external_repository: mannuccimattia/mannuccimattia.github.io
+          publish_branch: main
+          publish_dir: ./dist
 
-      #     # force_orphan: false per evitare di cancellare eventuali vecchi file esterni (anche se non ce ne dovrebbero essere)
-      #     force_orphan: false
+          force_orphan: true
 
-      #     user_name: "github-actions[bot]"
-      #     user_email: "github-actions[bot]@users.noreply.github.com"
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
