@@ -3,6 +3,12 @@ import { useEffect, useState } from "react"
 const Skills = () => {
     const [skills, setSkills] = useState(null);
 
+    const getSkillIconUrl = (iconPath) => {
+        if (!iconPath) return "";
+        const fileName = iconPath.split("/").pop();
+        return new URL(`../assets/skills/${fileName}`, import.meta.url).href;
+    };
+
     const fetchSkills = () => {
         fetch("/skills.json")
             .then(res => res.json())
@@ -28,7 +34,7 @@ const Skills = () => {
                                 className="col-auto">
 
                                 <div className="skill-card rounded-3 p-2 mb-4">
-                                    <img src={skill.icon} className="img-fluid icon rounded-3 mt-1"
+                                    <img src={getSkillIconUrl(skill.icon)} className="img-fluid icon rounded-3 mt-1"
                                         alt={`Icona ${skill.name}`} />
                                     <h6 className="skill-name mt-2 mb-0">{skill.name}</h6>
                                 </div>
