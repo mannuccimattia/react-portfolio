@@ -3,10 +3,16 @@ import { useEffect, useState } from "react"
 const Skills = () => {
     const [skills, setSkills] = useState(null);
 
-    const getSkillIconUrl = (iconPath) => {
-        if (!iconPath) return "";
-        const fileName = `${iconPath}.svg`;
-        return new URL(`../assets/skills/${fileName}`, import.meta.url).href;
+    const skillIcons = import.meta.glob('../assets/skills/*.svg', { eager: true, query: '?url', import: 'default' });
+
+    const getSkillIconUrl = (icon) => {
+        if (!icon) return "";
+
+        const fileName = `${icon}.svg`;
+
+        const key = `../assets/skills/${fileName}`;
+
+        return skillIcons[key] || "";
     };
 
     const fetchSkills = () => {
