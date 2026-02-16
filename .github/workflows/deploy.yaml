@@ -28,20 +28,26 @@ jobs:
       - name: Build React App for Production
         run: npm run build
 
-      # 5. Deploy Produzione (Utilizzando Peaceiris)
-      - name: Deploy Production Environment (Root)
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload Build Artifact for Inspection
+        uses: actions/upload-artifact@v4
         with:
-          personal_token: ${{ secrets.DEPLOY_TOKEN }}
-          external_repository: mannuccimattia/mannuccimattia.github.io
+          name: debug-dist-folder
+          path: ./dist
 
-          # Destinazione: La root del repository di deploy
-          publish_branch: main
-          publish_dir: ./dist
-          destination_dir: .
+      # # 5. Deploy Produzione (Utilizzando Peaceiris)
+      # - name: Deploy Production Environment (Root)
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     personal_token: ${{ secrets.DEPLOY_TOKEN }}
+      #     external_repository: mannuccimattia/mannuccimattia.github.io
 
-          # force_orphan: false per evitare di cancellare eventuali vecchi file esterni (anche se non ce ne dovrebbero essere)
-          force_orphan: false
+      #     # Destinazione: La root del repository di deploy
+      #     publish_branch: main
+      #     publish_dir: ./dist
+      #     destination_dir: .
 
-          user_name: "github-actions[bot]"
-          user_email: "github-actions[bot]@users.noreply.github.com"
+      #     # force_orphan: false per evitare di cancellare eventuali vecchi file esterni (anche se non ce ne dovrebbero essere)
+      #     force_orphan: false
+
+      #     user_name: "github-actions[bot]"
+      #     user_email: "github-actions[bot]@users.noreply.github.com"
