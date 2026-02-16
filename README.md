@@ -17,7 +17,7 @@ linkedinUsername: ------ `mattia-mannucci`,
 emailClient: ----------- `gmail`,
 yourEamil: ------------- `mannuccimattia`,
 projectTitle: ---------- `Mattia Mannucci - Portfolio`,
-projectDescription: ---- `This is the <b>source code repository</b> for my personal portfolio website. The live site is statically deployed to <b>GitHub Pages</b> at 👉 <a href="tps://mannuccimattia.github.io`,">mannuccimattia.gihub.io</a>
+projectDescription: ---- `This is the <b>source code repository</b> for my personal portfolio website. The live site is deployed with <b>GitHub Pages</b> using GitHub Actions at 👉 <a href="tps://mannuccimattia.github.io`,">mannuccimattia.gihub.io</a>
 projectLicense: -------- `Unlicense`,
 projectLogo: ----------- `./public/imgs/mm-circle.png`,
 projectScreenshot: ----- `./public/imgs/portfolio-prev.png`
@@ -42,7 +42,7 @@ projectScreenshot: ----- `./public/imgs/portfolio-prev.png`
 <h3 align="center">Mattia Mannucci - Portfolio</h3>
 
   <p align="center">
-    This is the <b>source code repository</b> for my personal portfolio website. The live site is statically deployed to <b>GitHub Pages</b> at 👉 <a href="https://mannuccimattia.github.io">mannuccimattia.gihub.io</a>
+    This is the <b>source code repository</b> for my personal portfolio website. The live site is deployed with <b>GitHub Pages</b> using <b>GitHub Actions</b> at <a href="https://mannuccimattia.github.io">mannuccimattia.gihub.io</a>
   </p>
 </div>
 
@@ -58,7 +58,7 @@ projectScreenshot: ----- `./public/imgs/portfolio-prev.png`
         <li><a href="#features">Features</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
-    </li>
+    <!-- </li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
@@ -66,7 +66,7 @@ projectScreenshot: ----- `./public/imgs/portfolio-prev.png`
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#usage">Usage</a></li> -->
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
