@@ -7,6 +7,7 @@ import GlobalContext from "../contexts/GlobalContext";
 import HandleActiveCarousel from "../components/HandleActiveCarousel";
 import HandleGithubLinks from "../components/HandleGithubLinks";
 import Loader from "../components/Loader";
+import projectsData from "../data/data.json";
 
 const DetailPage = () => {
 
@@ -15,22 +16,13 @@ const DetailPage = () => {
     const { id } = useParams();
     const { setActivePage, isLoading, setIsLoading } = useContext(GlobalContext);
 
-    const fetchProject = () => {
-        fetch("/data.json")
-            .then(res => res.json())
-            .then(data => {
-                const reqProject = data.projects.find(project => project.id === parseInt(id));
-                setProject(reqProject);
-            })
-            .catch(err => console.error("Errore caricamento progetti:", err));
-    }
-
     useEffect(() => {
         setActivePage("projects");
         setIsLoading(true);
 
         setTimeout(() => {
-            fetchProject();
+            const reqProject = projectsData.projects.find(project => project.id === parseInt(id));
+            setProject(reqProject);
             setIsLoading(false)
         }, 500);
     }, [])

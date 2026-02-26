@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import skillsData from "../data/skills.json";
 
 const Skills = () => {
     const [skills, setSkills] = useState(null);
@@ -15,17 +16,8 @@ const Skills = () => {
         return skillIcons[key] || "";
     };
 
-    const fetchSkills = () => {
-        fetch("/skills.json")
-            .then(res => res.json())
-            .then(data => {
-                setSkills(data);
-            })
-            .catch(err => console.error("Errore caricamento skills:", err));
-    };
-
     useEffect(() => {
-        fetchSkills();
+        setSkills(skillsData);
     }, []);
 
     return (

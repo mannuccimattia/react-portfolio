@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom";
 import TechBadges from "./TechBadges";
+import projectsData from "../data/data.json";
 
 const Projects = () => {
 
@@ -13,17 +14,8 @@ const Projects = () => {
         return new URL(`../assets/projects/${fileName}`, import.meta.url).href;
     };
 
-    const fetchProjects = () => {
-        fetch("/data.json")
-            .then(res => res.json())
-            .then(data => {
-                setProjects(data.projects);
-            })
-            .catch(err => console.error("Errore caricamento progetti:", err));
-    }
-
     useEffect(() => {
-        fetchProjects();
+        setProjects(projectsData.projects);
     }, [])
 
     return (

@@ -1,0 +1,95 @@
+{
+    "frontend": [
+        {
+            "id": 1,
+            "name": "HTML",
+            "icon": "html"
+        },
+        {
+            "id": 2,
+            "name": "CSS",
+            "icon": "css"
+        },
+        {
+            "id": 3,
+            "name": "JavaScript",
+            "icon": "javascript"
+        },
+        {
+            "id": 4,
+            "name": "React",
+            "icon": "react"
+        }
+    ],
+    "backend": [
+        {
+            "id": 1,
+            "name": "Node.js",
+            "icon": "node"
+        },
+        {
+            "id": 2,
+            "name": "Express",
+            "icon": "express"
+        },
+        {
+            "id": 3,
+            "name": "MySQL",
+            "icon": "mysql"
+        },
+        {
+            "id": 4,
+            "name": "PHP",
+            "icon": "php"
+        },
+        {
+            "id": 5,
+            "name": "Laravel",
+            "icon": "laravel"
+        }
+    ],
+    "tools": [
+        {
+            "id": 1,
+            "name": "Git",
+            "icon": "git"
+        },
+        {
+            "id": 2,
+            "name": "GitHub",
+            "icon": "github"
+        },
+        {
+            "id": 3,
+            "name": "Postman",
+            "icon": "postman"
+        },
+        {
+            "id": 4,
+            "name": "XAMPP",
+            "icon": "xampp"
+        }
+    ],
+    "editing": [
+        {
+            "id": 1,
+            "name": "AutoCAD",
+            "icon": "autocad"
+        },
+        {
+            "id": 2,
+            "name": "Photoshop",
+            "icon": "photoshop"
+        },
+        {
+            "id": 3,
+            "name": "GIMP",
+            "icon": "gimp"
+        },
+        {
+            "id": 4,
+            "name": "CorelDRAW",
+            "icon": "corel"
+        }
+    ]
+}
