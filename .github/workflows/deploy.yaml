@@ -23,7 +23,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # 4. Build React App for Production
+      # 4. Clean cache and Build React App for Production
+      - name: Clean cache
+        run: npm cache clean --force && rm -rf dist node_modules/.vite
+
       - name: Build React App for Production
         run: npm run build
 
